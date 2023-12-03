@@ -1,0 +1,46 @@
+<Defs>
+
+    <RecipeDef>
+        <defName>EM_Make_Gunpowder</defName>
+        <label>make gunpowder</label>
+        <description>Make a pile of gunpowder by submitting sulfur and coal to a chemical process.</description>
+        <jobString>Making gunpowder.</jobString>
+        <effectWorking>Cook</effectWorking>
+        <soundWorking>Recipe_Smith</soundWorking>
+        <workAmount>1600</workAmount>
+        <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+        <recipeUsers>
+          <li>FueledSmithy</li>
+          <li>ElectricSmithy</li>
+        </recipeUsers>
+        <ingredients>
+          <li>
+            <filter>
+              <thingDefs>
+                <li>EM_Sulfur</li>
+              </thingDefs>
+            </filter>
+            <count>15</count>
+          </li>
+          <li>
+            <filter>
+                <thingDefs>
+                    <li>VMEu_Coal</li>
+                </thingDefs>
+            </filter>
+            <count>15</count>
+          </li>
+        </ingredients>
+        <fixedIngredientFilter>
+          <thingDefs>
+            <li>EM_Sulfur</li>
+            <li>VMEu_Coal</li>
+          </thingDefs>
+        </fixedIngredientFilter>
+        <products>
+            <EM_Gunpowder>15</EM_Gunpowder>
+        </products>
+        <researchPrerequisite>Smithing</researchPrerequisite>
+      </RecipeDef>
+
+</Defs>

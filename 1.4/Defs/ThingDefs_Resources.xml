@@ -1,0 +1,105 @@
+<Defs>
+
+    <!-- Sulfur -->
+    <ThingDef ParentName="RockBase">
+        <defName>EM_MineableSulfur</defName>
+        <label>sulfur ore</label>
+        <description>Rock containing bits of sulfur.</description>
+        <graphicData>
+          <texPath>Things/Building/Linked/RockFlecked_Atlas</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <shaderType>CutoutComplex</shaderType>
+          <color>(138, 130, 92)</color>
+          <colorTwo>(222, 189, 98)</colorTwo>
+        </graphicData>
+        <statBases>
+          <MaxHitPoints>1200</MaxHitPoints>
+        </statBases>
+        <building>
+          <isResourceRock>true</isResourceRock>
+          <mineableThing>EM_Sulfur</mineableThing>
+          <mineableYield>40</mineableYield>
+          <mineableScatterCommonality>0.5</mineableScatterCommonality>
+          <mineableScatterLumpSizeRange>10~20</mineableScatterLumpSizeRange>
+        </building>
+      </ThingDef>
+    
+    <ThingDef ParentName="ResourceBase">
+        <defName>EM_Sulfur</defName>
+        <label>sulfur</label>
+        <description>A crystaline, nonmetalic chemical element, mostly occuring as sulfate on other materials. Sulfur is an essential ingredient in the production of gunpowder.</description>
+        <graphicData>
+            <texPath>Things/Item/Resource/EM_Sulfur</texPath>
+            <graphicClass>Graphic_StackCount</graphicClass>
+        </graphicData>
+        <soundInteract>Metal_Drop</soundInteract>
+        <soundDrop>Metal_Drop</soundDrop>
+        <statBases>
+            <MaxHitPoints>75</MaxHitPoints>
+            <MarketValue>1.3</MarketValue>
+            <Mass>0.4</Mass>
+        </statBases>
+        <tickerType>Normal</tickerType>
+        <useHitPoints>true</useHitPoints>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <thingCategories>
+            <li>ResourcesRaw</li>
+        </thingCategories>
+        <deepCommonality>3</deepCommonality>
+        <deepCountPerPortion>35</deepCountPerPortion>
+        <deepLumpSizeRange>10~15</deepLumpSizeRange>
+        <burnableByRecipe>false</burnableByRecipe>
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>1.1</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+                <explosiveExpandPerStackcount>0.037</explosiveExpandPerStackcount>
+                <startWickOnDamageTaken>
+                    <li>Flame</li>
+                </startWickOnDamageTaken>
+                <startWickHitPointsPercent>0.333</startWickHitPointsPercent>
+                <preExplosionSpawnChance>1</preExplosionSpawnChance>
+                <wickTicks>70~150</wickTicks>
+            </li>
+        </comps>
+        <allowedArchonexusCount>80</allowedArchonexusCount>
+    </ThingDef>
+
+    <ThingDef ParentName="ResourceBase">
+        <defName>EM_Gunpowder</defName>
+        <label>gunpowder</label>
+        <description>A black, dusty chemical compound that violently explodes when exposed to heat. Gunpowder is essential in the manufacture of most firearms, from late medieval to advanced industrial.</description>
+        <graphicData>
+            <texPath>Things/Item/Resource/EM_Gunpowder</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <statBases>
+            <MaxHitPoints>50</MaxHitPoints>
+            <MarketValue>1.4</MarketValue>
+            <Mass>0.4</Mass>
+            <Flammability>3</Flammability>
+            <WorkToMake>700</WorkToMake>
+        </statBases>
+        <tickerType>Normal</tickerType>
+        <useHitPoints>true</useHitPoints>
+        <healthAffectsPrice>false</healthAffectsPrice>
+        <thingCategories>
+            <li>ResourcesRaw</li>
+        </thingCategories>
+        <comps>
+            <li Class="CompProperties_Explosive">
+                <explosiveRadius>1.4</explosiveRadius>
+                <explosiveDamageType>Bomb</explosiveDamageType>
+                <explosiveExpandPerStackcount>0.037</explosiveExpandPerStackcount>
+                <startWickOnDamageTaken>
+                    <li>Flame</li>
+                </startWickOnDamageTaken>
+                <startWickHitPointsPercent>0.666</startWickHitPointsPercent>
+                <preExplosionSpawnChance>1</preExplosionSpawnChance>
+                <wickTicks>70~150</wickTicks>
+            </li>
+        </comps>
+        <allowedArchonexusCount>80</allowedArchonexusCount>
+    </ThingDef>
+
+</Defs>

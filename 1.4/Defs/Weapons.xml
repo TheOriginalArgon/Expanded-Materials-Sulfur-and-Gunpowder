@@ -1,0 +1,413 @@
+<Defs>
+
+    <!-- Musket -->
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>EM_Musket</defName>
+        <label>musket</label>
+        <description>An old gunpowder weapon consisting of a long metal tube disposed over a wooden handle. The user had to manually ignite the flint and reload the gun to shoot.</description>
+        <graphicData>
+            <texPath>Things/Item/Weapon/Musket</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_Rifle</soundInteract>
+        <weaponClasses>
+            <li>LongShots</li>
+        </weaponClasses>
+        <statBases>
+            <WorkToMake>9000</WorkToMake>
+            <Mass>3.5</Mass>
+            <AccuracyTouch>0.62</AccuracyTouch>
+            <AccuracyShort>0.77</AccuracyShort>
+            <AccuracyMedium>0.89</AccuracyMedium>
+            <AccuracyLong>0.74</AccuracyLong>
+            <RangedWeapon_Cooldown>1.8</RangedWeapon_Cooldown>
+        </statBases>
+        <costList>
+            <VMEu_Iron>30</VMEu_Iron>
+            <WoodLog>15</WoodLog>
+            <EM_Gunpowder>30</EM_Gunpowder>
+        </costList>
+        <recipeMaker>
+            <skillRequirements>
+                <Crafting>4</Crafting>
+            </skillRequirements>
+            <displayPriority>415</displayPriority>
+            <recipeUsers>
+              <li>FueledSmithy</li>
+              <li>ElectricSmithy</li>
+            </recipeUsers>
+            <researchPrerequisite>Smithing</researchPrerequisite>
+        </recipeMaker>
+        <equippedAngleOffset>45</equippedAngleOffset>
+        <verbs>
+            <li>
+                <verbClass>Verb_Shoot</verbClass>
+                <hasStandardCommand>true</hasStandardCommand>
+                <defaultProjectile>EM_Bullet_Musket</defaultProjectile>
+                <warmupTime>2</warmupTime>
+                <range>34.9</range>
+                <soundCast>Shot_BoltActionRifle</soundCast>
+                <soundCastTail>GunTail_Heavy</soundCastTail>
+                <muzzleFlashScale>9</muzzleFlashScale>
+            </li>
+        </verbs>
+        <tools>
+            <li>
+                <label>stock</label>
+                <capacities>
+                    <li>Blunt</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+            <li>
+                <label>barrel</label>
+                <capacities>
+                    <li>Blunt</li>
+                    <li>Poke</li>
+                </capacities>
+                <power>9</power>
+                <cooldownTime>2</cooldownTime>
+            </li>
+        </tools>
+    </ThingDef>
+    <ThingDef ParentName="BaseBullet">
+        <defName>EM_Bullet_Musket</defName>
+        <label>musket bullet</label>
+        <projectile>
+            <damageDef>Bullet</damageDef>
+            <damageAmountBase>17</damageAmountBase>
+            <stoppingPower>1.5</stoppingPower>
+            <speed>68</speed>
+        </projectile>
+        <graphicData>
+            <texPath>Things/Projectile/Bullet_big</texPath>
+            <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+    </ThingDef>
+
+    <!-- Blunderbuss -->
+    <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>EM_Blunderbuss</defName>
+        <label>blunderbuss</label>
+        <description>A weapon similar in design to a musket, although smaller and with a wider cannon. It fires heavy projectiles that are deadly at short ranges, not very effective at longer distances.</description>
+        <possessionCount>1</possessionCount>
+        <graphicData>
+          <texPath>Things/Item/Weapon/Blunderbuss</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_Shotgun</soundInteract>
+        <weaponClasses>
+          <li>ShortShots</li>
+        </weaponClasses>
+        <weaponTags>
+          <li>ShortShots</li>
+        </weaponTags>
+        <statBases>
+          <WorkToMake>9000</WorkToMake>
+          <Mass>3.4</Mass>
+          <AccuracyTouch>0.83</AccuracyTouch>
+          <AccuracyShort>0.80</AccuracyShort>
+          <AccuracyMedium>0.62</AccuracyMedium>
+          <AccuracyLong>0.58</AccuracyLong>
+          <RangedWeapon_Cooldown>1.75</RangedWeapon_Cooldown>
+        </statBases>
+        <costList>
+          <VMEu_Iron>30</VMEu_Iron>
+          <WoodLog>30</WoodLog>
+          <EM_Gunpowder>30</EM_Gunpowder>
+        </costList>
+        <recipeMaker>
+          <skillRequirements>
+            <Crafting>4</Crafting>
+          </skillRequirements>
+          <displayPriority>430</displayPriority>
+          <recipeUsers>
+            <li>FueledSmithy</li>
+            <li>ElectricSmithy</li>
+          </recipeUsers>
+          <researchPrerequisite>Smithing</researchPrerequisite>
+        </recipeMaker>
+        <verbs>
+          <li>
+            <verbClass>Verb_Shoot</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>EM_Bullet_Blunderbuss</defaultProjectile>
+            <warmupTime>1.15</warmupTime>
+            <range>14.9</range>
+            <soundCast>Shot_Shotgun</soundCast>
+            <soundCastTail>GunTail_Heavy</soundCastTail>
+            <muzzleFlashScale>9</muzzleFlashScale>
+          </li>
+        </verbs>
+        <tools>
+          <li>
+            <label>stock</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2</cooldownTime>
+          </li>
+          <li>
+            <label>barrel</label>
+            <capacities>
+              <li>Blunt</li>
+              <li>Poke</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2</cooldownTime>
+          </li>
+        </tools>
+      </ThingDef>
+      <ThingDef ParentName="BaseBullet">
+        <defName>EM_Bullet_Blunderbuss</defName>
+        <label>shotgun blast</label>
+        <graphicData>
+          <texPath>Things/Projectile/Bullet_Shotgun</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+          <damageDef>Bullet</damageDef>
+          <damageAmountBase>18</damageAmountBase>
+          <stoppingPower>4</stoppingPower>
+          <armorPenetrationBase>0.12</armorPenetrationBase>
+          <speed>50</speed>
+        </projectile>
+      </ThingDef>
+
+      <!-- Hand mortar -->
+      <ThingDef ParentName="BaseHumanMakeableGun">
+        <defName>EM_HandMortar</defName>
+        <label>hand mortar</label>
+        <description>A big, sturdy gunpowder weapon that is heavy and difficult to fire. It shots a big projectile at long distances, but is quite slow to reload and inaccurate most of the time.</description>
+        <graphicData>
+          <texPath>Things/Item/Weapon/HandMortar</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <soundInteract>Interact_Rifle</soundInteract>
+        <generateCommonality>0.3</generateCommonality>
+        <weaponClasses>
+          <li>RangedHeavy</li>
+        </weaponClasses>
+        <statBases>
+          <WorkToMake>16000</WorkToMake>
+          <Mass>3.4</Mass>
+          <RangedWeapon_Cooldown>4.8</RangedWeapon_Cooldown>
+        </statBases>
+        <costList>
+          <VMEu_Iron>45</VMEu_Iron>
+          <WoodLog>30</WoodLog>
+          <EM_Gunpowder>35</EM_Gunpowder>
+        </costList>
+        <recipeMaker>
+          <skillRequirements>
+            <Crafting>4</Crafting>
+          </skillRequirements>
+          <displayPriority>455</displayPriority>
+          <recipeUsers>
+            <li>FueledSmithy</li>
+            <li>ElectricSmithy</li>
+          </recipeUsers>
+          <researchPrerequisite>Smithing</researchPrerequisite>
+        </recipeMaker>
+        <verbs>
+          <li>
+            <verbClass>Verb_Shoot</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <defaultProjectile>EM_Bullet_HandMortar</defaultProjectile>
+            <warmupTime>4.5</warmupTime>
+            <range>27.9</range>
+            <forcedMissRadius>2.3</forcedMissRadius>
+            <burstShotCount>1</burstShotCount>
+            <soundCast>Shot_IncendiaryLauncher</soundCast>
+            <soundCastTail>GunTail_Medium</soundCastTail>
+            <muzzleFlashScale>14</muzzleFlashScale>
+            <targetParams>
+              <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+          </li>
+        </verbs>
+        <tools>
+          <li>
+            <label>stock</label>
+            <capacities>
+              <li>Blunt</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2</cooldownTime>
+          </li>
+          <li>
+            <label>barrel</label>
+            <capacities>
+              <li>Blunt</li>
+              <li>Poke</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2</cooldownTime>
+          </li>
+        </tools>
+      </ThingDef>
+      <ThingDef ParentName="BaseBullet">
+        <defName>EM_Bullet_HandMortar</defName>
+        <label>mortar bolt</label>
+        <graphicData>
+          <texPath>Things/Projectile/LauncherShot</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+          <shaderType>TransparentPostLight</shaderType>
+          <color>(140,135,156)</color>
+        </graphicData>
+        <thingClass>Projectile_Explosive</thingClass>
+        <projectile>
+          <speed>32</speed>
+          <damageDef>Bomb</damageDef>
+          <!-- Use default damage from explosion def -->
+          <explosionRadius>1.1</explosionRadius>
+          <preExplosionSpawnThingDef>Filth_Ash</preExplosionSpawnThingDef>
+          <preExplosionSpawnChance>0.5</preExplosionSpawnChance>
+          <ai_IsIncendiary>false</ai_IsIncendiary>
+          <arcHeightFactor>0.6</arcHeightFactor>
+          <shadowSize>0.6</shadowSize>
+        </projectile>
+      </ThingDef>
+
+      <!-- Powderstick -->
+      <ThingDef ParentName="BaseMakeableGrenade">
+        <defName>EM_Powderstick</defName>
+        <label>powderstick</label>
+        <description>A very primitive grenade-like weapon used to destroy doors, walls and flush enemies out of their hiding spots. It consists of a long stick with a bag of gunpowder attatched to one end. The user lights it on fire and throws it far away before it blows up.</description>
+        <tickerType>Normal</tickerType>
+        <graphicData>
+          <texPath>Things/Item/Weapon/Powderstick</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <uiIconScale>1.3</uiIconScale>
+        <soundInteract>Interact_Grenade</soundInteract>
+        <techLevel>Industrial</techLevel>
+        <statBases>
+          <Mass>1</Mass>
+          <RangedWeapon_Cooldown>2.66</RangedWeapon_Cooldown>
+          <WorkToMake>9000</WorkToMake>
+        </statBases>
+        <costList>
+          <WoodLog>20</WoodLog>
+          <EM_Gunpowder>45</EM_Gunpowder>
+          <Cloth>25</Cloth>
+        </costList>
+        <recipeMaker>
+          <recipeUsers>
+            <li>FueledSmithy</li>
+            <li>ElectricSmithy</li>
+          </recipeUsers>
+          <researchPrerequisite>Smithing</researchPrerequisite>
+        </recipeMaker>
+        <weaponTags>
+          <li>GrenadeDestructive</li>
+        </weaponTags>
+        <thingCategories>
+          <li>Grenades</li>
+        </thingCategories>
+        <smeltable>false</smeltable>
+        <verbs>
+          <li>
+            <label>throw powderstick</label>
+            <verbClass>Verb_LaunchProjectile</verbClass>
+            <hasStandardCommand>true</hasStandardCommand>
+            <range>12.9</range>
+            <forcedMissRadius>1.9</forcedMissRadius>
+            <warmupTime>1.8</warmupTime>
+            <noiseRadius>4</noiseRadius>
+            <ai_IsBuildingDestroyer>true</ai_IsBuildingDestroyer>
+            <soundCast>ThrowGrenade</soundCast>
+            <targetParams>
+              <canTargetLocations>true</canTargetLocations>
+            </targetParams>
+            <defaultProjectile>EM_Proj_Powderstick</defaultProjectile>
+            <rangedFireRulepack>Combat_RangedFire_Thrown</rangedFireRulepack>
+          </li>
+        </verbs>
+        <comps>
+          <li Class="CompProperties_Explosive">
+            <explosiveRadius>1.99</explosiveRadius>
+            <explosiveDamageType>Bomb</explosiveDamageType>
+            <requiredDamageTypeToExplode>Flame</requiredDamageTypeToExplode>
+          </li>
+        </comps>
+      </ThingDef>
+    
+      <ThingDef Name="BaseFragGrenadeProjectile" ParentName="BaseGrenadeProjectile" Abstract="True">
+        <thingClass>Projectile_Explosive</thingClass>
+        <graphicData>
+          <texPath>Things/Item/Weapon/Powderstick_projectile</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <projectile>
+          <explosionRadius>1.9</explosionRadius >
+          <damageDef>Bomb</damageDef>
+          <!-- Use default damage from explosion def -->
+          <explosionDelay>100</explosionDelay>
+        </projectile>
+      </ThingDef>
+    
+      <ThingDef ParentName="BaseFragGrenadeProjectile">
+        <defName>EM_Proj_Powderstick</defName>
+        <label>powderstick</label>
+      </ThingDef>
+
+      <!-- Torch -->
+      <ThingDef ParentName="BaseMeleeWeapon_Blunt">
+        <defName>EM_Torch</defName>
+        <label>torch</label>
+        <description>One of mankind's simplests yet more useful elements. A long rod that holds a fire on one end. It is effective for lighting in the dark, setting enemy settlements on fire and burning the faces of your foes.</description>
+        <graphicData>
+          <texPath>Things/Item/Weapon/Torch</texPath>
+          <graphicClass>Graphic_Single</graphicClass>
+        </graphicData>
+        <uiIconScale>1.1</uiIconScale>
+        <techLevel>Neolithic</techLevel>
+        <weaponTags>
+          <li>NeolithicMeleeBasic</li>
+        </weaponTags>
+        <weaponClasses>
+          <li>Neolithic</li>
+        </weaponClasses>
+        <statBases>
+          <WorkToMake>3000</WorkToMake>
+          <Mass>1.7</Mass>
+        </statBases>
+        <costList>
+          <WoodLog>30</WoodLog>
+          <VMEu_Coal>25</VMEu_Coal>
+        </costList>
+        <equippedAngleOffset>-65</equippedAngleOffset>
+        <recipeMaker>
+          <recipeUsers>
+            <li>CraftingSpot</li>
+            <li>FueledSmithy</li>
+            <li>ElectricSmithy</li>
+          </recipeUsers>
+          <displayPriority>300</displayPriority>
+        </recipeMaker>
+        <tools>
+          <li>
+            <label>handle</label>
+            <capacities>
+              <li>Poke</li>
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2</cooldownTime>
+          </li>
+          <li>
+            <label>head</label>
+            <labelUsedInLogging>false</labelUsedInLogging>
+            <capacities>
+              <li>Blunt</li>
+              <!-- <li>Burn</li> -->
+            </capacities>
+            <power>9</power>
+            <cooldownTime>2.33</cooldownTime>
+          </li>
+        </tools>
+      </ThingDef>
+    
+</Defs>
